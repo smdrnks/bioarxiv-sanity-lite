@@ -1,0 +1,2 @@
+# bioarxiv-sanity-lite
+This is a fork from arxiv-sanity lite. The server periodically pulls new papers from bioarxiv and medarxiv. Then allows users to tag papers of interest, and recommends new papers for each tag based on SVMs over tfidf features of paper abstracts. Allows one to search, rank, sort, slice and dice these results in a pretty web UI. Lastly, bioarxiv-sanity-lite can send you daily emails with recommendations of new papers based on your tags.
