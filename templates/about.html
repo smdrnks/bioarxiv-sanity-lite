@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block variables %}
+{% endblock %}
+
+{% block content %}
+<div id="aboutwrap">
+    <div>
+        This is a fork from <a href="https://github.com/karpathy/arxiv-sanity-lite">arxiv-sanity lite</a>. The server periodically pulls new papers from bioarxiv and medarxiv. Then allows users to tag papers of interest, and recommends new papers for each tag based on SVMs over tfidf features of paper abstracts. Allows one to search, rank, sort, slice and dice these results in a pretty web UI. Lastly, bioarxiv-sanity-lite can send you daily emails with recommendations of new papers based on your tags. Curate your tags, track recent papers in your area, and don't miss out!
+    </div>
+
+    <br>
+    <div>
+        bioarxiv-sanity-lite's paper database has been initialised with data provided by the <a href="https://rxivist.org/">Rxivist</a> paper search engine going all the way back to November 2013. More information about the Rxivist API can be found <a href="https://rxivist.org/docs">here</a> as well as on <a href="https://github.com/blekhmanlab/rxivist">Github</a>.
+    </div>
+
+    <br>
+    <div>The code for this website is open source at Github under <a href="https://github.com/karpathy/arxiv-sanity-lite">bioarxiv-sanity-lite</a>.</div>
+
+    <br>
+    <div>Many thanks to <a href="https://twitter.com/karpathy">@karpathy</a> for building arxiv-sanity-lite and to the Rxivist project for making their historical record publically available!</div>
+</div>
+{% endblock %}
+
+{% block elements %}
+{% endblock %}
