@@ -1,7 +1,7 @@
 
 # I run this to update the database with newest papers every day or so or etc.
 up:
-	python arxiv_daemon.py --num 2000
+	python bioarxiv_daemon.py
 	python compute.py
 
 # I use this to run the server
