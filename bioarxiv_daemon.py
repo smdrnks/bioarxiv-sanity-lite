@@ -63,7 +63,7 @@ if __name__ == '__main__':
         return papers, total_papers
 
     
-    def process_retrieved_papers(papers, current_idx):
+    def process_retrieved_papers(papers):
         # process the batch of retrieved papers
         nhad, nnew, nreplace = 0, 0, 0
         for p in papers:
@@ -85,7 +85,7 @@ if __name__ == '__main__':
         # some diagnostic information on how things are coming along
         logging.info(papers[0]['_time_str'])
         logging.info("k=%d, out of %d: had %d, replaced %d, new %d. now total db size: %d" %
-             (current_idx, len(papers), nhad, nreplace, nnew, prevn))
+             (k, len(papers), nhad, nreplace, nnew, prevn))
 
         nupdated = nreplace + nnew
         
@@ -108,7 +108,7 @@ if __name__ == '__main__':
         # get first batch of max. 100 papers + total number of published papers in date interval
         k = args.start
         papers, total_papers = bioarxiv_fetch(q, start_idx=k)
-        nupdated = process_retrieved_papers(papers, current_idx=k)
+        nupdated = process_retrieved_papers(papers)
         total_updated += nupdated
 
         # zzz
@@ -117,7 +117,7 @@ if __name__ == '__main__':
         # iterate over remaining papers in dateinterval in case there are more
         for k in range(args.start+100, total_papers, 100):
             papers, _ = bioarxiv_fetch(q, start_idx=k)
-            nupdated = process_retrieved_papers(papers, current_idx=k)
+            nupdated = process_retrieved_papers(papers)
             total_updated += nupdated
 
             # zzz
