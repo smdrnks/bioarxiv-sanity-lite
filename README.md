@@ -1,6 +1,8 @@
 # bioarxiv-sanity-lite
 This is a fork of the awesome <a href="https://github.com/karpathy/arxiv-sanity-lite">arxiv-sanity lite</a> by <a href="https://twitter.com/karpathy">@karpathy</a>. The server periodically pulls new papers from <a href="https://www.biorxiv.org/">bioRxiv</a> and <a href="https://www.medrxiv.org/">medRxiv</a>. Then allows users to tag papers of interest, and recommends new papers for each tag based on SVMs over tfidf features of paper abstracts. Allows one to search, rank, sort, slice and dice these results in a pretty web UI. Lastly, bioarxiv-sanity-lite can send you daily emails with recommendations of new papers based on your tags.
 
+![Screenshot](screenshot.png)
+
 #### To run
 
 To run this locally I usually run the following script to update the database with any new papers. I typically schedule this via a periodic cron job:
