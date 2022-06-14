@@ -9,12 +9,12 @@ Many thanks to <a href="https://twitter.com/karpathy">@karpathy</a> for building
 
 #### To run
 
-To run this locally I usually run the following script to update the database with any new papers. I typically schedule this via a periodic cron job:
+To run this locally I usually run the following script to update the database with any new papers. I typically schedule this via a periodic cron job that runs once a day:
 
 ```bash
 #!/bin/bash
 
-python bioarxiv_daemon.py
+python bioarxiv_daemon.py --date_start=<date> --date_end=<date>
 
 if [ $? -eq 0 ]; then
     echo "New papers detected! Running compute.py"
@@ -23,6 +23,8 @@ else
     echo "No new papers were added, skipping feature computation"
 fi
 ```
+
+You can specify a date interval to search for new papers via the `date_start` and `date_end` flags, which accept strings in the format `YYYY-MM-DD`. If no date interval is specified the daemon searches for new papers between today and yesterday.
 
 You can see that updating the database is a matter of first downloading the new papers via the arxiv api using `bioarxiv_daemon.py`, and then running `compute.py` to compute the tfidf features of the papers. Finally to serve the flask server locally we'd run something like:
 
