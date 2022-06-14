@@ -26,7 +26,7 @@ fi
 
 You can specify a date interval to search for new papers via the `date_start` and `date_end` flags, which accept strings in the format `YYYY-MM-DD`. If no date interval is specified the daemon searches for new papers between today and yesterday.
 
-You can see that updating the database is a matter of first downloading the new papers via the bioarxiv api using `bioarxiv_daemon.py`, and then running `compute.py` to compute the tfidf features of the papers. We use the exact same database schema as arxiv-sanity-lite, so you could also index core machine learning papers if you would like to have everything in one place. To do this simply periodically run `arxiv_daemon.py` (as described <a href="https://github.com/karpathy/arxiv-sanity-lite">here<a>). 
+You can see that updating the database is a matter of first downloading the new papers via the bioarxiv api using `bioarxiv_daemon.py`, and then running `compute.py` to compute the tfidf features of the papers. We use the exact same database schema as arxiv-sanity-lite, so you could also index core machine learning papers if you would like to have everything in one place. To do this simply periodically run `arxiv_daemon.py` (as described in the <a href="https://github.com/karpathy/arxiv-sanity-lite">original project<a>). 
 
 Finally to serve the flask server locally we'd run something like:
 
