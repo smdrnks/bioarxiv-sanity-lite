@@ -23,7 +23,8 @@ def bioarxiv_db_entry(paper):
 
     server = paper['repo']
     
-    db_entry['id'] = paper['doi']
+    pid = paper['doi'].split('/')[1]
+    db_entry['id'] = pid
     db_entry['link'] = f"https://www.{server}.org/content/{paper['doi']}"
     db_entry['title'] = paper['title']
     db_entry['summary'] = paper['abstract']
@@ -34,9 +35,9 @@ def bioarxiv_db_entry(paper):
     db_entry['_time'] = time.mktime(dt.timetuple())
     db_entry['_time_str'] = datetime.strftime(dt, '%b %d %Y')
     db_entry['tags'] = [{'term': server}, {'term': paper['collection']}]
-    db_entry['_id'] = paper['doi']
+    db_entry['_id'] = pid
     version = paper['article_version']
-    db_entry['_idv'] = f"{paper['doi']}v{version}"
+    db_entry['_idv'] = f"{pid}v{version}"
     db_entry['_version'] = version
 
     return db_entry

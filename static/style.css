@@ -5,13 +5,18 @@ body {
     line-height: 1.2;
     background-color: #eee;
 }
+
+a {
+    color: #005892
+}
+
 #header {
     height: 24px;
     background-color: #005892;
     color: white;
     padding-top: 8px;
     padding-left: 10px;
-    border-bottom: 1px solid rgb(14, 22, 56);
+    border-bottom: 1px solid #005892;
 }
 #home-link {
     display: inline-block;
@@ -65,7 +70,7 @@ body {
     font-size: 16px;
 }
 .rel_time {
-    color: #050;
+    color: #4D4F65;
     display: inline-block;
     font-size: 16px;
 }
@@ -74,7 +79,7 @@ body {
     font-size: 14px;
 }
 .rel_tags {
-    color: #009;
+    color: #4D4F65;
     font-size: 16px;
     display: inline-block;
     margin-left: 5px;
@@ -86,12 +91,12 @@ body {
     cursor: pointer;
     text-align: center;
     border-radius: 3px;
-    background-color: #f55;
+    background-color: #FF5A5A;
     width: 22px;
     height: 22px;
 }
 .rel_utag { /* shows an active tag for a paper */
-    background-color: #009;
+    background-color: #4D4F65;
     color: #fff;
     font-size: 16px;
     display: inline-block;
@@ -101,16 +106,16 @@ body {
     cursor: pointer;
 }
 .rel_utag_all { /* distinguishes the special 'all' tag from others */
-    background-color: #909;
+    background-color: #4D4F65;
 }
 .rel_utag_add { /* adds a paper to a tag */
-    background-color: #55f;
+    background-color: #005892;
     margin-right: 2px;
     width: 12px;
     text-align: center;
 }
 .rel_utag_sub { /* subs a tag from a paper */
-    background-color: #f55;
+    background-color: #FF5A5A;
     width: 12px;
     text-align: center;
 }
@@ -182,7 +187,7 @@ body {
 }
 .rel_word_weight {
     display: inline-block;
-    color: #009;
+    color: #005892;
 }
 .rel_word_idf {
     display: inline-block;
@@ -230,8 +235,8 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #fff;
-    background-color: #337ab7;
-    border: 1px solid #2e6da4;
+    background-color: #005892;
+    border: 1px solid #005892;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -277,7 +282,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     text-decoration: underline;
-    color: #009;
+    color: #005892;
 }
 @media only screen and (max-width: 720px) {
     #controls, #wrap, #profilewrap, #wordwrap, #aboutwrap, #statswrap {
@@ -293,6 +298,6 @@ body {
     margin: 0 5px 0 5px;
     font-size: 16px;
     cursor: pointer;
-    color: #009;
+    color: #005892;
     text-decoration: underline;
 }
