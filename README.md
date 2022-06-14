@@ -26,7 +26,7 @@ fi
 
 You can specify a date interval to search for new papers via the `date_start` and `date_end` flags, which accept strings in the format `YYYY-MM-DD`. If no date interval is specified the daemon searches for new papers between today and yesterday.
 
-You can see that updating the database is a matter of first downloading the new papers via the arxiv api using `bioarxiv_daemon.py`, and then running `compute.py` to compute the tfidf features of the papers. Finally to serve the flask server locally we'd run something like:
+You can see that updating the database is a matter of first downloading the new papers via the bioarxiv api using `bioarxiv_daemon.py`, and then running `compute.py` to compute the tfidf features of the papers. Finally to serve the flask server locally we'd run something like:
 
 ```bash
 export FLASK_APP=serve.py; flask run
