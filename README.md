@@ -46,10 +46,6 @@ All of the database will be stored inside the `data` directory. Finally, if you'
  pip install -r requirements.txt
  ```
 
-#### Todos
-
-- Build category filter to filter bioRxiv and medRxiv collections.
-
 #### License
 
 MIT
