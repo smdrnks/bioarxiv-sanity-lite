@@ -219,6 +219,9 @@ def main():
     opt_skip_have = request.args.get('skip_have', default_skip_have) # hide papers we already have?
     opt_svm_c = request.args.get('svm_c', '') # svm C parameter
     opt_page_number = request.args.get('page_number', '1') # page number for pagination
+    opt_collection_filter = request.args.getlist('collection')
+    #print(f'Collection filter: {opt_collection_filter}')
+    #print(opt_time_filter)
 
     # if a query is given, override rank to be of type "search"
     # this allows the user to simply hit ENTER in the search field and have the correct thing happen
@@ -253,6 +256,13 @@ def main():
         tnow = time.time()
         deltat = int(opt_time_filter)*60*60*24 # allowed time delta in seconds
         keep = [i for i,pid in enumerate(pids) if (tnow - kv[pid]['_time']) < deltat]
+        pids, scores = [pids[i] for i in keep], [scores[i] for i in keep]
+
+    # filter by collection
+    if opt_collection_filter:
+        mdb = get_metas()
+        kv = {k:v for k,v in mdb.items()}
+        keep = [i for i,pid in enumerate(pids) if kv[pid]['collection'] in opt_collection_filter]
         pids, scores = [pids[i] for i in keep], [scores[i] for i in keep]
 
     # optionally hide papers we already have

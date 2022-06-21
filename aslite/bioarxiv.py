@@ -28,6 +28,7 @@ def get_response(search_query, start_index=0):
 
     if url.status != 200:
         logger.error(f"bioarxiv did not return status 200 response")
+        raise
 
     return response
 
@@ -51,7 +52,7 @@ def parse_response(response):
         db_entry['title'] = paper['title']
         db_entry['summary'] = paper['abstract']
         db_entry['authors'] = [{'name': name.strip()} for name in paper['authors'].split(';')]
-        db_entry['arxiv_primary_category'] = paper['category']
+        db_entry['collection'] = paper['category']
         db_entry['tags'] = [{'term': server}, {'term': paper['category']}]
         db_entry['_time'] = time.mktime(dt.timetuple())
         db_entry['_time_str'] = datetime.strftime(dt, '%b %d %Y')

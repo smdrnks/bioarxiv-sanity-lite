@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     def store(p):
         pdb[p['_id']] = p
-        mdb[p['_id']] = {'_time': p['_time']}
+        mdb[p['_id']] = {'_time': p['_time'], 'collection': p['collection']}
 
     def bioarxiv_fetch(query, start_idx):
         logging.info(f"querying {query['server']} api at start_index {start_idx} in date range [{query['date_start']}, {query['date_end']}].")

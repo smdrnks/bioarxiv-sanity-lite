@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     def store(p):
         pdb[p['_id']] = p
-        mdb[p['_id']] = {'_time': p['_time']}
+        mdb[p['_id']] = {'_time': p['_time'], 'collection': p['collection']}
 
     # fetch the latest papers
     total_updated = 0

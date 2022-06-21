@@ -60,9 +60,11 @@ def parse_response(response):
         j['_version'] = version
         j['_time'] = time.mktime(j['updated_parsed'])
         j['_time_str'] = time.strftime('%b %d %Y', j['updated_parsed'])
+        j['collection'] = j['arxiv_primary_category']
         # delete apparently spurious and redundant information
         del j['summary_detail']
         del j['title_detail']
+        del j['arxiv_primary_category']
         out.append(j)
 
     return out
